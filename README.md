@@ -7,7 +7,7 @@ C#的websocket Demo，包含服务端和客户端
 3. 创建服务端实现类 EchoServer，继承WebSocketBehavior，override OnMessage方法。发送消息：  
 `this.Send("服务端返回：" + e.Data);`
 4. 注册EchoSocket
-```
+```c#
     var wssv = new WebSocketServer("ws://localhost:5998");
     wssv.AddWebSocketService<EchoServer>("/Echo");
     wssv.Start();
@@ -18,9 +18,9 @@ C#的websocket Demo，包含服务端和客户端
 
 ## 客户端实现 (c#，csClient目录)
 1. 新建控制台C#项目。
-2. 安装[websocket-sharp](https://github.com/sta/websocket-sharp): `Install-Package WebSocketSharp -Pre`）
+2. 安装[websocket-sharp](https://github.com/sta/websocket-sharp): `Install-Package WebSocketSharp -Pre`
 3. 连接服务，发送消息。
-```
+```c#
 	using (var ws = new WebSocket("ws://localhost:5998/Echo"))
 	{
 	    ws.OnMessage += (sender, e) =>
@@ -44,9 +44,9 @@ C#的websocket Demo，包含服务端和客户端
 
 ## IE8，9的支持
 1. 使用垫片技术，在IE8，9中用Flash实现websocket方法。
-2. 选择了[web-socket-js](https://github.com/gimite/web-socket-js)  
+2. 选择了[web-socket-js](https://github.com/gimite/web-socket-js) ，直接将web_socket目录引用即可。 
 3. 增加ie下的引用。
-```
+```html
     <!-- IE8,9: -->
     <!--[if lte IE 9]>
       <script type="text/javascript" src="web_socket/swfobject.js"></script>
