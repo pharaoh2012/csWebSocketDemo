@@ -39,7 +39,7 @@ C#的websocket Demo，包含服务端和客户端
 4. 运行
 
 ## 客户端实现 (HTML,html目录)
-1. 新建html页面，实现websocket方法。源代码见：[html/index.html](blob/master/html/index.html)
+1. 新建html页面，实现websocket方法。源代码见：[html/index.html](/pharaoh2012/csWebSocketDemo/blob/master/html/index.html)
 2. 运行
 
 ## IE8，9的支持
