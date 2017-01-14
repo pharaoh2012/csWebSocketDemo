@@ -10,11 +10,12 @@ namespace csServer
     {
         static void Main(string[] args)
         {
-    var wssv = new WebSocketServer("ws://localhost:5998");
-    wssv.AddWebSocketService<EchoServer>("/Echo");
-    wssv.Start();
-    Console.ReadLine();
-    wssv.Stop();
+            var wssv = new WebSocketServer("ws://localhost:5998");
+            wssv.AddWebSocketService<EchoServer>("/Echo");
+            wssv.Start();
+            FlashPolicyServer.Start();
+            Console.ReadLine();
+            wssv.Stop();
         }
     }
 }

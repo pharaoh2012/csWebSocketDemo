@@ -43,9 +43,10 @@ C#的websocket Demo，包含服务端和客户端
 2. 运行,[在线访问](http://pharaoh168.coding.me/csWebSocketDemo/html/index.html)
 
 ## IE8，9的支持
-1. 使用垫片技术，在IE8，9中用Flash实现websocket方法。
-2. 选择了[web-socket-js](https://github.com/gimite/web-socket-js) ，直接将web_socket目录引用即可。 
-3. 增加ie下的引用。源码：[html/ie.html](/html/ie.html)
+IE8，9不支持Websocket，因此在客户端使用Flash实现websocket方法。服务器端需要提供Flash的跨域服务。
+### 客户端改造
+1. 选择了[web-socket-js](https://github.com/gimite/web-socket-js) ，直接将web_socket目录引用即可。 
+2. 增加ie下的引用。源码：[html/ie.html](/html/ie.html)
 ```html
     <!-- IE8,9: -->
     <!--[if lte IE 9]>
@@ -57,4 +58,9 @@ C#的websocket Demo，包含服务端和客户端
       </script>
     <![endif]-->
 ```    
-4. 创建一个IIS虚拟目录运行，不能以文件的形式直接运行。[在线访问](http://pharaoh168.coding.me/csWebSocketDemo/html/ie.html)
+3. 创建一个IIS虚拟目录运行，不能以文件的形式直接运行。[在线访问](http://pharaoh168.coding.me/csWebSocketDemo/html/ie.html)
+
+### 服务器端改造
+1. 启动一个TCP服务在843端口，提供Flash的Socket策略服务。文件： [csServer/FlashPolicyServer.cs](/csServer/csServer/FlashPolicyServer.cs)
+2. 在Main方法中启动FlashPolicyServer： `FlashPolicyServer.Start();`
+
