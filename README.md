@@ -40,7 +40,7 @@ C#的websocket Demo，包含服务端和客户端
 
 ## 客户端实现 (HTML,html目录)
 1. 新建html页面，实现websocket方法。源代码见：[html/index.html](/html/index.html)
-2. 运行,[在线访问](https://pharaoh2012.github.io/csWebSocketDemo/html/index.html)
+2. 运行,[在线访问](http://pharaoh168.coding.me/csWebSocketDemo/html/index.html)
 
 ## IE8，9的支持
 1. 使用垫片技术，在IE8，9中用Flash实现websocket方法。
@@ -57,4 +57,4 @@ C#的websocket Demo，包含服务端和客户端
       </script>
     <![endif]-->
 ```    
-4. 创建一个IIS虚拟目录运行，不能以文件的形式直接运行。[在线访问](https://pharaoh2012.github.io/csWebSocketDemo/html/ie.html)
+4. 创建一个IIS虚拟目录运行，不能以文件的形式直接运行。[在线访问](http://pharaoh168.coding.me/csWebSocketDemo/html/ie.html)
