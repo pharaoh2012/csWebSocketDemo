@@ -1,11 +1,10 @@
 # csWebSocketDemo
 C#的websocket Demo，包含服务端和客户端
 
-## 服务器端实现（C#）
+## 服务器端实现（C#，csServer目录）
 1. 新建控制台C#项目。
-2. 安装websocket-sharp （官网： https://github.com/sta/websocket-sharp）
-`Install-Package WebSocketSharp -Pre`
-3. 创建服务端实现类 EchoServer，继承WebSocketBehavior，override OnMessage方法。发送消息：
+2. 安装[websocket-sharp](https://github.com/sta/websocket-sharp):`Install-Package WebSocketSharp -Pre`
+3. 创建服务端实现类 EchoServer，继承WebSocketBehavior，override OnMessage方法。发送消息：  
 `this.Send("服务端返回：" + e.Data);`
 4. 注册EchoSocket
 ```
@@ -17,9 +16,9 @@ C#的websocket Demo，包含服务端和客户端
 ```    
 5. 运行
 
-## 客户端实现 (c#)
+## 客户端实现 (c#，csClient目录)
 1. 新建控制台C#项目。
-2. 安装websocket-sharp （`Install-Package WebSocketSharp -Pre`）
+2. 安装[websocket-sharp](https://github.com/sta/websocket-sharp): `Install-Package WebSocketSharp -Pre`）
 3. 连接服务，发送消息。
 ```
 	using (var ws = new WebSocket("ws://localhost:5998/Echo"))
@@ -39,13 +38,13 @@ C#的websocket Demo，包含服务端和客户端
 ```
 4. 运行
 
-## 客户端实现 (HTML,c#实现见官网)
-1. 新建html页面，实现websocket方法。源代码见：
+## 客户端实现 (HTML,html目录)
+1. 新建html页面，实现websocket方法。源代码见：[html/index.html](blob/master/html/index.html)
 2. 运行
 
 ## IE8，9的支持
 1. 使用垫片技术，在IE8，9中用Flash实现websocket方法。
-2. 选择了web-socket-js 主页： https://github.com/gimite/web-socket-js
+2. 选择了[web-socket-js](https://github.com/gimite/web-socket-js)  
 3. 增加ie下的引用。
 ```
     <!-- IE8,9: -->
@@ -58,4 +57,4 @@ C#的websocket Demo，包含服务端和客户端
       </script>
     <![endif]-->
 ```    
-4. 创建一个IIS虚拟目录运行。
+4. 创建一个IIS虚拟目录运行，不能以文件的形式直接运行。
